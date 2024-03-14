@@ -4,7 +4,8 @@ const issueSchema = mongoose.Schema(
     {
         id: {
             type: Number,
-            required: true
+            required: true,
+            unique: true
         },
         title: {
             type: String,
