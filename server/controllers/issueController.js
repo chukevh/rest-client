@@ -1,3 +1,12 @@
+const issues = [
+    {
+        id: 1,
+        title: "Laptop broken",
+        description: "My laptop broke recently"
+
+    }
+]
+
 const getIssue = (req,res) => {
     res.status(200).json("getting issue")
 }
