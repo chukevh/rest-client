@@ -1,14 +1,13 @@
-const issues = [
-    {
-        id: 1,
-        title: "Laptop broken",
-        description: "My laptop broke recently"
+const Issue = require("../models/issue")
 
+const getIssue = async (req,res) => {
+    try {
+        const issues = await Issue.find({})
+        res.status(200).json(issues)
+        console.log("Issue data fetched")
+    } catch (error) {
+        res.status(500).json({ message: error.message })
     }
-]
-
-const getIssue = (req,res) => {
-    res.status(200).json("getting issue")
 }
 
 const createIssue = (req,res) => {
