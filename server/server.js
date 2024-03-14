@@ -6,13 +6,12 @@ const dotenv = require('dotenv').config()
 // environment variables
 const DB_URL = process.env.DB_URL;
 
-// routes
-const issue = require('./routes/issueRoutes')
-app.use('/api/issue', issue)
-
 // parse json
 app.use(express.json())
 
+// routes
+const issue = require('./routes/issueRoutes')
+app.use('/api/issue', issue)
 
 
 app.listen(5000, () => {

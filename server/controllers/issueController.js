@@ -10,16 +10,58 @@ const getIssue = async (req,res) => {
     }
 }
 
-const createIssue = (req,res) => {
-    res.status(200).json("creating issue")
+const createIssue = async (req,res) => {
+    const newIssue = req.body
+
+    try {
+        const issue = await Issue.create(newIssue)
+        res.status(200).json(issue)
+        console.log("Issue data created")
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
 }
 
-const updateIssue = (req,res) => {
-    res.status(200).json("updating issue")
+const updateIssue = async (req,res) => {
+    const { id } = req.params
+    const updatedIssue = req.body
+
+    try {
+        const issue = await Issue.updateOne(
+            { "id": id },
+            { $set: updatedIssue}
+        )
+        res.status(200).json(
+            {
+                message: `Issue data at id: ${id} updated`,
+                issue: issue 
+            }
+        )
+        console.log(`Issue data at id: ${id} updated`)
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+    
 }
 
-const deleteIssue = (req,res) => {
-    res.status(200).json("deleting issue")
+const deleteIssue = async (req,res) => {
+    const { id } = req.params
+
+    try {
+        const issue = await Issue.deleteOne(
+            { "id": id },
+        )
+        res.status(200).json(
+            {
+                message: `Issue data at id: ${id} deleted`,
+                issue: issue 
+            }
+        )
+        console.log(`Issue data at id: ${id} deleted`)
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+    
 }
 
 module.exports = {
