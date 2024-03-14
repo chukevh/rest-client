@@ -2,10 +2,12 @@ export default function Main() {
     return (
         <>
             <div className="main-container">
-                <div>
-                    <h1>Issues</h1>
+                <div className="all-issues-container">
+                    <h1>All Issues</h1>
                 </div>
-                <form className="form-container">
+                <div className="send-issues-container">
+                    <h1>Issues</h1>
+                    <form className="form-container">
                     <label>Id</label>
                     <input/>
                     <label>Title</label>
@@ -14,6 +16,7 @@ export default function Main() {
                     <input/>
                     <button>Submit</button>
                 </form>
+                </div>
             </div>
         </>
     )

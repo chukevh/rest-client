@@ -2,7 +2,7 @@ export default function Footer() {
     return (
         <>
             <div className="footer-container">
-                <span>Made by Kevin Chu</span>
+                <h3>Made by Kevin Chu</h3>
             </div>
         </>
     )

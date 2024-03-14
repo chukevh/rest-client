@@ -2,7 +2,7 @@ export default function Header() {
     return (
         <>
             <nav className="header-container">
-                Sitemate
+                <h2>Sitemate</h2>
             </nav>
         </>
     )

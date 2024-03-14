@@ -13,15 +13,23 @@ code {
     monospace;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header Component */
 .header-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
+/* Main Component */
 .main-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   flex-grow: 1;
 }
@@ -32,7 +40,8 @@ code {
   gap: 1rem;
 }
 
+
+/* Footer container */
 .footer-container {
   text-align: center;
-  
 }

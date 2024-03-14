@@ -3,16 +3,16 @@ const mongoose = require('mongoose')
 const app = express()
 const dotenv = require('dotenv').config()
 
-const path = require("path")
-const url = require("url")
-// import { dirname } from "path";
-//import { fileURLToPath } from 'url';
+// const path = require("path")
+// const url = require("url")
+// // import { dirname } from "path";
+// //import { fileURLToPath } from 'url';
 
-//const __filename = fileURLToPath(import.meta.url);
-//const __dirname = dirname(__filename);
-const _dirname = path.dirname("")
-const buildPath = path.join(_dirname, "../frontend/build")
-app.use(express.static(buildPath))
+// //const __filename = fileURLToPath(import.meta.url);
+// //const __dirname = dirname(__filename);
+// const _dirname = path.dirname("")
+// const buildPath = path.join(_dirname, "../frontend/build")
+// app.use(express.static(buildPath))
 
 // environment variables
 const DB_URL = process.env.DB_URL;
